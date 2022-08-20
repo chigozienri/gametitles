@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-38434695-1"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+
+        gtag('config', 'UA-38434695-1');
+    </script>
+    <script src="https://unpkg.com/ml5@latest/dist/ml5.min.js"></script>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Game Title Generator</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@3.4.1/dist/css/bootstrap.min.css" integrity="sha384-HSMxcRTRxnN+Bdg0JdbxYKrThecOKuH5zCYotlSAcp1+c8xmyTe9GYg1l9a69psu" crossorigin="anonymous">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <div>
+            <h1>Game Title Generator</h1>
+            <p>
+                Get a game title from CharRNN
+            </p>
+        </div>
+        <!-- <label for="file">Text file from local filesystem</label>
+        <input type="file" class="form-control" id="file" name="file">
+        <label for="list">Pre-made text files</label>
+        <select class="form-control" id="list" name="list">
+            <option value="">Select a text file</option>
+            <option value="games">Games</option>
+        </select> -->
+        <button type="submit" class="btn btn-primary" id="startButton">Start</button>
+        <div id="result">
+            <p class="output"></p>
+        </div>
+    </div>
+
+    <script src="main.js"></script>
+</body>
+</html>
