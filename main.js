@@ -7,7 +7,7 @@ const charRNN = new ml5.charRNN('./models/games');
 
 var markov = new Markov();
 fetch('games.txt')
-    .then((resp) => {resp.text().split('\n').forEach(line => markov.addStates(line))})
+    .then((resp) => {resp.text().then((txt) => {txt.split('\n').forEach(line => markov.addStates(line))})})
 markov.train();
 
 function getGameCharRNN() {
