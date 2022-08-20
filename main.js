@@ -4,15 +4,10 @@ const markovOutput = document.querySelector('.markovOutput');
 const markovStartButton = document.querySelector('#markovStartButton');
 
 const charRNN = new ml5.charRNN('./models/games');
-const Markov = require('js-markov');
 
 var markov = new Markov();
-markov.addStates([
-    'Today is sunny',
-    'Today is rainy',
-    'The weather is sunny',
-    'The weather for tomorrow might be rainy'
-  ]);
+fetch('games.txt')
+    .then((resp) => {resp.split('\n').forEach(line => markov.addStates(line))})
 markov.train();
 
 function getGameCharRNN() {
