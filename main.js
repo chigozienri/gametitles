@@ -1,10 +1,19 @@
-const output = document.querySelector('.output');
+const charRNNOutput = document.querySelector('.charRNNOutput');
 const charRNNStartButton = document.querySelector('#charRNNStartButton');
+const markovOutput = document.querySelector('.markovOutput');
+const markovStartButton = document.querySelector('#markovStartButton');
 
 const charRNN = new ml5.charRNN('./models/games');
 
-function getGame() {
-    charRNN.generate({seed: 'Game Jam:'}, (err, r) => {output.textContent = r.sample; console.log(r)});
+function getGameCharRNN() {
+    charRNN.generate({seed: 'Game Jam:'}, (err, r) => {charRNNOutput.textContent = r.sample; console.log(r)});
 }
 
-charRNNStartButton.addEventListener('click', getGame);
+function getGameMarkov() {
+    var markovResult = 'foobar';
+    markovOutput.textContent = markovResult;
+    console.log(markovResult)
+}
+
+charRNNStartButton.addEventListener('click', getGameCharRNN);
+markovStartButton.addEventListener('click', getGameMarkov);
