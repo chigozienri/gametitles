@@ -11,7 +11,7 @@ const charRNN = new ml5.charRNN('./models/games');
 // markov.train();
 
 function getGameCharRNN() {
-    charRNN.generate({seed: 'Game Jam:'}, (err, r) => {charRNNOutput.textContent = r.sample; console.log(r)});
+    return 'Leisure Suit Larry 3: Passionate Patti in Pursuit of the Pulsating Pectorals';
 }
 
 // function getGameMarkov() {
